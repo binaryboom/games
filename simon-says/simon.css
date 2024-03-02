@@ -1,0 +1,192 @@
+.btn {
+    border: 5px solid black;
+    border-radius: 30px;
+    height: 180px;
+    width: 180px;
+    margin: 10px;
+}
+.retry-btn{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: 5px solid black;
+    border-radius: 20px;
+    width: 200px;
+    padding: 5px;
+}
+.start-btn{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    border: 5px solid black;
+    border-radius: 20px;
+    width: 200px;
+    padding: 5px;
+}
+
+.start-popup {
+    background-color: black;
+    color: white;
+    border: 5px solid black;
+    border-radius: 20px;
+    font-size: 80px;
+    z-index: 20;
+    display: inline-block;
+    animation: popup 3s ease-in-out forwards;
+}
+
+.end-popup {
+    background-color: black;
+    color: white;
+    border: 5px solid black;
+    border-radius: 20px;
+    font-size: 80px;
+    z-index: 20;
+    display: inline-block;
+    animation: gameOver 3s ease-in-out;
+}
+.level-clear {
+    background-color: black;
+    color: white;
+    border: 5px solid black;
+    border-radius: 20px;
+    font-size: 80px;
+    z-index: 20;
+    display: inline-block;
+    animation: levelClear 1.8s ease-in-out;
+}
+
+@keyframes popup {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    90% {
+        transform: translateY(-535%);
+        opacity: 1;
+        
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes gameOver {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    90% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes levelClear {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    90% {
+        transform: translateY(-550%);
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.gameSetup {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pink {
+    background-color: #d95980;
+}
+
+.orange {
+    background-color: #f99b45;
+}
+
+.green {
+    background-color: #63aac0;
+}
+
+.blue {
+    background-color: #819ff9;
+}
+
+.clicks{
+    background-color: black;
+    color: white;
+    font-size: medium;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+.score{
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-size: medium;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+.bot-flash {
+    background-color: white;
+}
+.user-flash {
+    background-color: black;
+}
+
+h3{
+    margin: 3px;
+}
+
+@media screen and (max-width: 767px) {
+    .btn {
+        height: 50vw; /* 50% of the viewport width */
+        width: 43vw; /* 43% of the viewport width */
+        margin: 2vw; /* 2% of the viewport width for margin */
+    }
+    /* .level-clear{
+        font-size: 15px;
+    } */
+    .end-popup{
+        font-size: 55px;
+    }
+    @keyframes popup {
+        0% {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        90% {
+            transform: translateY(-200%);
+            opacity: 1;
+            
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    @keyframes levelClear {
+        0% {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        90% {
+            transform: translateY(-350%);
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+}
