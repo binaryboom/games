@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says Game</title>
+    <link rel="stylesheet" href="simon.css">
+</head>
+
+<body>
+
+    <center><h1>Simon Says Game</h1></center>
+    <center><h3 class="level" style="display: none;">Press any key to start !!</h3></center>
+    <center><h3 class="clicks" style="display:none; ">Clicks Left</h3></center>
+    <center><h3 class="score" style="display:none; "></h3></center>
+    <center><h3 class="start-btn" type="button" style="display:inline-block; ">Start Game</h3></center>
+    
+
+    <div class="gameSetup">
+        <div class="line1">
+            <button class="btn pink "  id="pink" type="button"></button>
+            <button class="btn green"  id="green" type="button"></button>
+        </div>
+        <div class="line2">
+            <button class="btn orange" id="orange"  type="button"></button>
+            <button class="btn blue"  id="blue" type="button"></button>
+        </div>
+    </div>
+
+    <center><h1 class="start-popup" style="display:none; ">Game Started !!</h1></center>
+    <center><h1 class="end-popup" style="display:none; ">Game Over !!</h1></center>
+    <center><h1 class="retry-btn" style="display:none; ">Retry</h1></center>
+    <center><h1 class="level-clear" style="display:none; "></h1></center>
+    <script src="simon.js"></script>
+</body>
+
+</html>
