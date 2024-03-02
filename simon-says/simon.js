@@ -13,9 +13,6 @@ function levelUp(){
     stopAudio("bgAudio");
     userSeq=[];
     document.querySelector(".level").innerText=`Level : ${++level}`;
-    if(level===1){
-        playAudio("game-startAudio");
-    }
     document.querySelector(".level").style.display="";
     let randIdx = Math.floor(Math.random() * 4);
     let randColor=btns[randIdx];
@@ -154,6 +151,7 @@ else{
 startBtn=document.querySelector(".start-btn");
 startBtn.addEventListener("click",function(){
     if(gameRunning==false){
+        playAudio("game-startAudio");
         document.querySelector(".start-popup").style.display = "";
         document.querySelector(".start-btn").style.display = "none";
         gameRunning = true;
