@@ -166,9 +166,9 @@ startBtn.addEventListener("click",function(){
    
 })
 
-window.addEventListener('DOMContentLoaded', (event) => {
+// window.addEventListener('DOMContentLoaded', (event) => {
     playAudio("bgAudio");
-  });
+  // });
 
 // document.addEventListener("keypress",function(){
 //     if(gameRunning==false){
