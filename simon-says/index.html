@@ -10,29 +10,57 @@
 
 <body>
 
-    <center><h1>Simon Says Game</h1></center>
-    <center><h3 class="level" style="display: none;">Press any key to start !!</h3></center>
-    <center><h3 class="clicks" style="display:none; ">Clicks Left</h3></center>
-    <center><h3 class="score" style="display:none; "></h3></center>
-    <center><h3 class="start-btn" type="button" style="display:inline-block; ">Start Game</h3></center>
-    
+    <center>
+        <h1>Simon Says Game</h1>
+    </center>
+    <center>
+        <h3 class="level" style="display: none;">Press any key to start !!</h3>
+    </center>
+    <center>
+        <h3 class="clicks" style="display:none; ">Clicks Left</h3>
+    </center>
+    <center>
+        <h3 class="score" style="display:none; "></h3>
+    </center>
+    <center>
+        <h3 class="start-btn" type="button" style="display:inline-block; ">Start Game</h3>
+    </center>
+
 
     <div class="gameSetup">
         <div class="line1">
-            <button class="btn pink "  id="pink" type="button"></button>
-            <button class="btn green"  id="green" type="button"></button>
+            <button class="btn pink " id="pink" type="button"></button>
+            <button class="btn green" id="green" type="button"></button>
         </div>
         <div class="line2">
-            <button class="btn orange" id="orange"  type="button"></button>
-            <button class="btn blue"  id="blue" type="button"></button>
+            <button class="btn orange" id="orange" type="button"></button>
+            <button class="btn blue" id="blue" type="button"></button>
         </div>
     </div>
 
-    <center><h1 class="start-popup" style="display:none; ">Game Started !!</h1></center>
-    <center><h1 class="end-popup" style="display:none; ">Game Over !!</h1></center>
-    <center><h1 class="retry-btn" style="display:none; ">Retry</h1></center>
-    <center><h1 class="level-clear" style="display:none; "></h1></center>
-    <script src="simon.js"></script>
+    <center>
+        <h1 class="start-popup" style="display:none; ">Game Started !!</h1>
+    </center>
+    <center>
+        <h1 class="end-popup" style="display:none; ">Game Over !!</h1>
+    </center>
+    <center>
+        <h1 class="retry-btn" style="display:none; ">Retry</h1>
+    </center>
+    <center>
+        <h1 class="level-clear" style="display:none; "></h1>
+    </center>
+    <audio id="pinkAudio" src="/audio/simon1.mp3"></audio>
+    <audio id="blueAudio" src="/audio/simon2.mp3"></audio>
+    <audio id="orangeAudio" src="/audio/simon3.mp3"></audio>
+    <audio id="greenAudio" src="/audio/simon4.mp3"></audio>
+    <audio id="bgAudio" src="/audio/backgroundComp.mp3"></audio>
+    <audio id="gameOverAudio" src="/audio/game-over.mp3"></audio>
+    <audio id="wrong-colorAudio" src="/audio/wrong-color.mp3"></audio>
+    <audio id="game-startAudio" src="/audio/game-start.mp3"></audio>
+    <audio id="levelCompleteAudio" src="/audio/levelComplete.wav"></audio>
+
+    <script src="simon3.js"></script>
 </body>
 
 </html>
