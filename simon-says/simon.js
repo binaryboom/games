@@ -13,6 +13,9 @@ function levelUp(){
     stopAudio("bgAudio");
     userSeq=[];
     document.querySelector(".level").innerText=`Level : ${++level}`;
+    if(level===1){
+        playAudio("game-startAudio");
+    }
     document.querySelector(".level").style.display="";
     let randIdx = Math.floor(Math.random() * 4);
     let randColor=btns[randIdx];
@@ -164,10 +167,12 @@ startBtn.addEventListener("click",function(){
    
 })
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    window.alert("Hii");
+document.querySelector(".playBtn").addEventListener("click",function(){
     playAudio("bgAudio");
- });
+    this.style.display="none";
+    document.querySelector("#game").style.display="";
+
+})
 
 // document.addEventListener("keypress",function(){
 //     if(gameRunning==false){
