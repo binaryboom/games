@@ -149,6 +149,14 @@
 h3{
     margin: 3px;
 }
+.playBtn{
+    background-image: url("/audio/Simon-says.png");
+    height: 100vh;
+    /* width: 100vw; */
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 @media screen and (max-width: 767px) {
     .btn {
@@ -156,14 +164,20 @@ h3{
         width: 43vw; /* 43% of the viewport width */
         margin: 2vw; /* 2% of the viewport width for margin */
     }
-    /* .level-clear{
-        font-size: 15px;
-    } */
+    .level-clear{
+        font-size: 35px;
+    }
     .end-popup{
         font-size: 55px;
     }
     .start-popup{
         font-size: 55px;
+    }
+    .playBtn{
+        height: 100vh;
+        /* width: 100vw; */
+        background-size: 100% 100%;
+
     }
     @keyframes popup {
         0% {
