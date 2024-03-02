@@ -54,7 +54,7 @@
     font-size: 80px;
     z-index: 20;
     display: inline-block;
-    animation: levelClear 1.9s ease-in-out;
+    animation: levelClear 1.8s ease-in-out;
 }
 
 @keyframes popup {
@@ -150,12 +150,13 @@ h3{
     margin: 3px;
 }
 .playBtn{
-    background-image: url("https://binaryboom.github.io/games/simon-says/audio/Simon-says.png");
+    background-image: url("/audio/Simon-says.png");
     height: 100vh;
     /* width: 100vw; */
-    background-size: 50% 100%;
+    background-size: 40% 70%;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: black;
 }
 
 @media screen and (max-width: 767px) {
@@ -176,8 +177,7 @@ h3{
     .playBtn{
         height: 100vh;
         /* width: 100vw; */
-        background-size: 100% 100%;
-
+        background-size: 80% 60%;
     }
     @keyframes popup {
         0% {
