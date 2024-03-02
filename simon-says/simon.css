@@ -162,6 +162,9 @@ h3{
     .end-popup{
         font-size: 55px;
     }
+    .start-popup{
+        font-size: 55px;
+    }
     @keyframes popup {
         0% {
             transform: translateY(100%);
