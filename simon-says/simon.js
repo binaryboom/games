@@ -87,7 +87,7 @@ function btnListeners(){
 }
 
 function retry(){
-    playAudio("bgAudio");
+    // playAudio("bgAudio");
     gameRunning=false;
     userSeq=[];
     gameSeq=[];
@@ -133,6 +133,9 @@ else{
     document.querySelector(".clicks").style.display = "none";
     document.querySelector(".score").style.display = "none";
     playAudio("gameOverAudio");
+    setTimeout(()=>{
+     playAudio("bgAudio");
+    },2000);
     if(level===1){
         document.querySelector(".end-popup").innerText = `Game Over !! \nYour Score is 0 🤡`;
     }
