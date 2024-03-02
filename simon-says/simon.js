@@ -3,20 +3,35 @@
 let gameRunning=false;
 let userSeq=[];
 let gameSeq=[];
+let gameAudioSeq=[];
 let level=0;
 
 let btns = ["pink", "blue", "orange", "green"];
 
+
 function levelUp(){
+    stopAudio("bgAudio");
     userSeq=[];
     document.querySelector(".level").innerText=`Level : ${++level}`;
+    if(level===1){
+        playAudio("game-startAudio");
+    }
     document.querySelector(".level").style.display="";
     let randIdx = Math.floor(Math.random() * 4);
     let randColor=btns[randIdx];
     let randBtn=document.querySelector(`.${randColor}`);
     gameSeq.push(randColor);
+    gameAudioSeq.push(randColor);
     console.log(gameSeq);
-    botFlash(randBtn);
+    // botFlash(randBtn);
+    gameSeq.forEach((color, index) => {
+        setTimeout(() => {
+            let randBtn = document.querySelector(`.${color}`);
+            botFlash(randBtn);
+            playAudio(`${color}Audio`);
+        }, index * 1000); // Adjust timing as needed
+    });
+    
 }
 
 function botFlash(btn){
@@ -32,10 +47,34 @@ function userFlash(btn){
     }, 500);
 }
 
+function playAudio(audioId) {
+    var audio = document.getElementById(audioId);
+    if (audio) {
+        audio.play();
+    }
+}
+function stopAudio(audioId) {
+    var audio = document.getElementById(audioId);
+    if (audio) {
+        audio.pause();
+    }
+}
 function btnPress(){
     // console.log(this);
     userFlash(this);
     userSeq.push(this.id);
+    if(this.id=="pink"){
+        playAudio("pinkAudio");
+    }
+    if(this.id=="blue"){
+        playAudio("blueAudio");
+    }
+    if(this.id=="orange"){
+        playAudio("orangeAudio");
+    }
+    if(this.id=="green"){
+        playAudio("greenAudio");
+    }
     console.log(userSeq);
     validateColor(userSeq.length-1);
 }
@@ -48,6 +87,7 @@ function btnListeners(){
 }
 
 function retry(){
+    playAudio("bgAudio");
     gameRunning=false;
     userSeq=[];
     gameSeq=[];
@@ -70,6 +110,7 @@ function validateColor(idx){
 if(userSeq[idx]===gameSeq[idx]){
     // console.log(`same color`);
     if(userSeq.length==gameSeq.length){
+        playAudio("levelCompleteAudio");
         let score=document.querySelector(".score");
         score.innerText=`${level*10} Points`
         score.style.display="";
@@ -84,12 +125,14 @@ if(userSeq[idx]===gameSeq[idx]){
 }
 else{
     // game over
+    playAudio("wrong-colorAudio");
     document.querySelector(".end-popup").style.display = "";
     document.querySelector(".start-popup").style.display = "none";
     document.querySelector(".level-clear").style.display = "none";
     document.querySelector(".level").style.display = "none";
     document.querySelector(".clicks").style.display = "none";
     document.querySelector(".score").style.display = "none";
+    playAudio("gameOverAudio");
     if(level===1){
         document.querySelector(".end-popup").innerText = `Game Over !! \nYour Score is 0 🤡`;
     }
@@ -115,13 +158,18 @@ startBtn.addEventListener("click",function(){
         document.querySelector(".start-btn").style.display = "none";
         gameRunning = true;
     }
-    
+
     setTimeout(()=>{
         levelUp();
         btnListeners();
     },3100);
    
 })
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    playAudio("bgAudio");
+  });
+
 // document.addEventListener("keypress",function(){
 //     if(gameRunning==false){
 //         document.querySelector(".start-popup").style.display = "";
