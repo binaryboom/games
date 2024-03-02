@@ -150,7 +150,7 @@ h3{
     margin: 3px;
 }
 .playBtn{
-    background-image: url("/audio/Simon-says.png");
+    background-image: url("https://binaryboom.github.io/games/simon-says/audio/Simon-says.png");
     height: 100vh;
     /* width: 100vw; */
     background-size: 40% 70%;
