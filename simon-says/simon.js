@@ -38,13 +38,13 @@ function botFlash(btn){
     btn.classList.add("bot-flash");
     setTimeout(() => {
         btn.classList.remove("bot-flash");
-    }, 500);
+    }, 150);
 }
 function userFlash(btn){
     btn.classList.add("user-flash");
     setTimeout(() => {
         btn.classList.remove("user-flash");
-    }, 500);
+    }, 150);
 }
 
 function playAudio(audioId) {
